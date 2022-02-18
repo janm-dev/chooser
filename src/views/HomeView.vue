@@ -16,18 +16,21 @@ const diceSides = ref(6)
 
 <template>
 	<div id="main">
-		<header class="header" aria-hidden>
-			<a href="https://janm.dev/"
+		<header class="header" aria-hidden="true">
+			<a tabindex="-1" href="https://janm.dev/"
 				><img class="janm-icon" :src="janmIcon" alt=""
 			/></a>
-			<a class="janm-text" href="https://janm.dev/"
+			<a tabindex="-1" class="janm-text" href="https://janm.dev/"
 				><h1 class="janm-text">janm.dev</h1></a
 			>
 
-			<a class="source-text" href="https://github.com/janm-dev"
+			<a tabindex="-1" class="source-text" href="https://github.com/janm-dev"
 				><h1 class="source-text">{{ version }}</h1></a
 			>
-			<a class="source-text" href="https://github.com/janm-dev/rand"
+			<a
+				tabindex="-1"
+				class="source-text"
+				href="https://github.com/janm-dev/rand"
 				><h1 class="source-text">source</h1></a
 			>
 		</header>
