@@ -27,7 +27,7 @@ const diceSides = ref(6)
 			<a class="source-text" href="https://github.com/janm-dev"
 				><h1 class="source-text">{{ version }}</h1></a
 			>
-			<a class="source-text" href="https://github.com/janm-dev/chooser"
+			<a class="source-text" href="https://github.com/janm-dev/rand"
 				><h1 class="source-text">source</h1></a
 			>
 		</header>

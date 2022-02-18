@@ -1,9 +1,9 @@
 {
-	"name": "chooser",
+	"name": "rand",
 	"version": "0.0.0",
 	"description": "Card randomizer built with Vue.",
 	"main": "index.html",
-	"repository": "https://github.com/janm-dev/chooser",
+	"repository": "https://github.com/janm-dev/rand",
 	"author": "janm.dev",
 	"license": "AGPL-3.0-or-later",
 	"private": true,

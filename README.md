@@ -1,4 +1,4 @@
-# chooser.janm.dev
+# rand.janm.dev
 
 Simple card and die randomizer.
 
