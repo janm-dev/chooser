@@ -47,6 +47,7 @@ const diceSides = ref(6)
 					type="number"
 					v-model="cardsAmount"
 					class="small-num spaced-num"
+					aria-label="Pick this many cards."
 					@focus="selectInput"
 				/>
 				random {{ cardsAmount === 1 ? "card" : "cards" }}.
@@ -67,12 +68,14 @@ const diceSides = ref(6)
 					type="number"
 					v-model="diceAmount"
 					class="small-num spaced-num"
+					aria-label="Roll this many dice."
 					@focus="selectInput"
 				/>
 				<input
 					type="number"
 					v-model="diceSides"
 					class="small-num"
+					aria-label="Roll dice with this many sides."
 					@focus="selectInput"
 				/>-sided {{ diceAmount === 1 ? "die" : "dice" }}.
 			</h2>
@@ -211,11 +214,14 @@ const diceSides = ref(6)
 @media (max-width: 1200px) {
 	#main {
 		grid-template-columns: 100%;
-		grid-template-rows: 1fr 1fr;
-		grid-template-areas: "cards" "dice";
+		grid-template-rows: 0 1fr 1fr;
+		grid-template-areas: "header" "cards" "dice";
 	}
 
-	.header {
+	.header,
+	.header * {
+		height: 0;
+		width: 0;
 		display: none;
 	}
 

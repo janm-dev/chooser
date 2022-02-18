@@ -1,0 +1,119 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"short_name": "rand",
+	"name": "Rand - Pick & Roll",
+	"description": "Pick cards, roll dice. With rand, you can quickly and easily pick random cards or roll dice with varying numbers of sides..",
+	"scope": "/",
+	"start_url": "/",
+	"lang": "en",
+	"display": "standalone",
+	"display_override": ["standalone", "fullscreen", "minimal-ui", "browser"],
+	"theme_color": "#0b3fda",
+	"background_color": "#12161a",
+	"icons": [
+		{
+			"src": "/monochrome.svg",
+			"sizes": "any",
+			"purpose": "monochrome",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "/monochrome.webp",
+			"sizes": "512x512",
+			"purpose": "monochrome",
+			"type": "image/webp"
+		},
+		{
+			"src": "/monochrome.png",
+			"sizes": "512x512",
+			"purpose": "monochrome",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "/icon-64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-64.webp",
+			"sizes": "64x64",
+			"type": "image/webp"
+		},
+		{
+			"src": "/icon-128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-128.webp",
+			"sizes": "128x128",
+			"type": "image/webp"
+		},
+		{
+			"src": "/icon-256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-256.webp",
+			"sizes": "256x256",
+			"type": "image/webp"
+		},
+		{
+			"src": "/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-512.webp",
+			"sizes": "512x512",
+			"type": "image/webp"
+		},
+		{
+			"src": "/icon-512.avif",
+			"sizes": "512x512",
+			"type": "image/avif"
+		},
+		{
+			"src": "/maskable.svg",
+			"sizes": "any",
+			"purpose": "maskable",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable-128.png",
+			"sizes": "128x128",
+			"purpose": "maskable",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable-128.webp",
+			"sizes": "128x128",
+			"purpose": "maskable",
+			"type": "image/webp"
+		},
+		{
+			"src": "/maskable-512.png",
+			"sizes": "512x512",
+			"purpose": "maskable",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable-512.webp",
+			"sizes": "512x512",
+			"purpose": "maskable",
+			"type": "image/webp"
+		},
+		{
+			"src": "/maskable-512.avif",
+			"sizes": "512x512",
+			"purpose": "maskable",
+			"type": "image/avif"
+		}
+	]
+}
