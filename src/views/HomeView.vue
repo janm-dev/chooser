@@ -216,21 +216,21 @@ const diceSides = ref(6)
 		grid-template-columns: 100%;
 		grid-template-rows: 0 1fr 1fr;
 		grid-template-areas: "header" "cards" "dice";
-	}
 
-	.header,
-	.header * {
-		height: 0;
-		width: 0;
-		display: none;
-	}
+		.header,
+		.header * {
+			height: 0;
+			width: 0;
+			display: none;
+		}
 
-	.area {
-		margin: auto;
-	}
+		.area {
+			margin: auto;
+		}
 
-	.category-icon {
-		max-height: 40vh;
+		.category-icon {
+			max-height: 40vh;
+		}
 	}
 }
 </style>
