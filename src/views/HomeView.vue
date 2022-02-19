@@ -7,7 +7,6 @@ import cardsIconDark from "@/icons/cards.dark.svg?raw"
 import diceIconDark from "@/icons/dice.dark.svg?raw"
 import cardsIconLight from "@/icons/cards.light.svg?raw"
 import diceIconLight from "@/icons/dice.light.svg?raw"
-import janmIcon from "@/icons/janm.svg?raw"
 
 const selectInput = (event: FocusEvent) =>
 	(event.currentTarget as HTMLInputElement).select()
@@ -21,7 +20,57 @@ const diceSides = ref(6)
 	<div id="main">
 		<header v-if="!state.isSmall" class="header" aria-hidden="true">
 			<a tabindex="-1" href="https://janm.dev/">
-				<div class="janm-icon" v-html="janmIcon"></div>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 256 256"
+					class="janm-icon"
+				>
+					<g filter="url(#a)">
+						<circle
+							cx="128"
+							cy="128"
+							r="64"
+							stroke="var(--color-fg)"
+							stroke-width="32"
+						/>
+					</g>
+					<defs>
+						<filter
+							id="a"
+							width="240"
+							height="240"
+							x="8"
+							y="8"
+							color-interpolation-filters="sRGB"
+							filterUnits="userSpaceOnUse"
+						>
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix
+								in="SourceAlpha"
+								result="hardAlpha"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+							/>
+							<feMorphology
+								in="SourceAlpha"
+								operator="dilate"
+								radius="8"
+								result="effect1_dropShadow"
+							/>
+							<feOffset />
+							<feGaussianBlur stdDeviation="16" />
+							<feColorMatrix
+								values="0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.75 0"
+							/>
+							<feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+							<feBlend
+								in="SourceGraphic"
+								in2="effect1_dropShadow"
+								result="shape"
+							/>
+						</filter>
+					</defs>
+				</svg>
 			</a>
 			<a tabindex="-1" class="janm-text" href="https://janm.dev/">
 				<h1 class="janm-text">janm.dev</h1>
@@ -138,12 +187,12 @@ const diceSides = ref(6)
 		font-family: var(--fonts-heading);
 		font-weight: var(--weight-heading);
 		font-size: 3rem;
-		color: var(--color-primary);
-		text-decoration-color: var(--color-primary);
+		color: var(--color-fg);
+		text-decoration-color: var(--color-fg);
 
 		&:hover {
 			opacity: 1;
-			text-decoration-color: var(--color-primary);
+			text-decoration-color: var(--color-fg);
 		}
 	}
 
