@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import d2 from "@/icons/d2.dark.svg"
-import d4 from "@/icons/d4.dark.svg"
-import d6 from "@/icons/d6.dark.svg"
-import d8 from "@/icons/d8.dark.svg"
-import d10 from "@/icons/d10.dark.svg"
-import d12 from "@/icons/d12.dark.svg"
-import d20 from "@/icons/d20.dark.svg"
+import d2 from "@/icons/d2.dark.svg?raw"
+import d4 from "@/icons/d4.dark.svg?raw"
+import d6 from "@/icons/d6.dark.svg?raw"
+import d8 from "@/icons/d8.dark.svg?raw"
+import d10 from "@/icons/d10.dark.svg?raw"
+import d12 from "@/icons/d12.dark.svg?raw"
+import d20 from "@/icons/d20.dark.svg?raw"
 
 const dieIcon = (sides: number): string =>
 	sides < 1000
@@ -34,7 +34,7 @@ defineProps<{
 <template>
 	<div :class="`die-wrapper${fullscreen ? ' full' : ''}`">
 		<div class="die">
-			<img class="die-icon" :src="dieIcon(sides)" alt="Die" />
+			<div class="die-icon" v-html="dieIcon(sides)"></div>
 			<span class="die-text">{{ value }}</span>
 		</div>
 		<h2 class="desc">{{ value }}/{{ sides }}</h2>

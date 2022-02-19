@@ -2,9 +2,9 @@
 import { ref } from "vue"
 import { RouterLink } from "vue-router"
 import { version } from "@/main"
-import cardsIcon from "@/icons/cards.dark.svg"
-import diceIcon from "@/icons/dice.dark.svg"
-import janmIcon from "@/icons/janm.svg"
+import cardsIcon from "@/icons/cards.dark.svg?raw"
+import diceIcon from "@/icons/dice.dark.svg?raw"
+import janmIcon from "@/icons/janm.svg?raw"
 
 const selectInput = (event: FocusEvent) =>
 	(event.currentTarget as HTMLInputElement).select()
@@ -17,26 +17,27 @@ const diceSides = ref(6)
 <template>
 	<div id="main">
 		<header class="header" aria-hidden="true">
-			<a tabindex="-1" href="https://janm.dev/"
-				><img class="janm-icon" :src="janmIcon" alt=""
-			/></a>
-			<a tabindex="-1" class="janm-text" href="https://janm.dev/"
-				><h1 class="janm-text">janm.dev</h1></a
-			>
+			<a tabindex="-1" href="https://janm.dev/">
+				<div class="janm-icon" v-html="janmIcon"></div>
+			</a>
+			<a tabindex="-1" class="janm-text" href="https://janm.dev/">
+				<h1 class="janm-text">janm.dev</h1>
+			</a>
 
-			<a tabindex="-1" class="source-text" href="https://github.com/janm-dev"
-				><h1 class="source-text">{{ version }}</h1></a
-			>
+			<a tabindex="-1" class="source-text" href="https://github.com/janm-dev">
+				<h1 class="source-text">{{ version }}</h1>
+			</a>
 			<a
 				tabindex="-1"
 				class="source-text"
 				href="https://github.com/janm-dev/rand"
-				><h1 class="source-text">source</h1></a
 			>
+				<h1 class="source-text">source</h1>
+			</a>
 		</header>
 
 		<section id="cards" class="area">
-			<img class="category-icon" :src="cardsIcon" alt="Cards" />
+			<div class="category-icon" v-html="cardsIcon"></div>
 			<h2>
 				<RouterLink
 					class="action"
@@ -54,7 +55,7 @@ const diceSides = ref(6)
 			</h2>
 		</section>
 		<section id="dice" class="area">
-			<img class="category-icon" :src="diceIcon" alt="Dice" />
+			<div class="category-icon" v-html="diceIcon"></div>
 			<h2>
 				<RouterLink
 					class="action"
@@ -167,7 +168,8 @@ const diceSides = ref(6)
 	}
 
 	.category-icon {
-		max-width: 80%;
+		width: 40vw;
+		max-height: 80vh;
 	}
 
 	.area {
@@ -229,7 +231,7 @@ const diceSides = ref(6)
 		}
 
 		.category-icon {
-			max-height: 40vh;
+			width: auto;
 		}
 	}
 }
