@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Theme } from "@/state"
 import state from "@/state"
 import d2Dark from "@/icons/d2.dark.svg?raw"
 import d4Dark from "@/icons/d4.dark.svg?raw"
