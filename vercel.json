@@ -1,5 +1,8 @@
 {
-	"rewrites": [{ "source": "/(.+)", "destination": "/" }],
+	"rewrites": [
+		{ "source": "/cards/(\\d*)", "destination": "/" },
+		{ "source": "/dice/(.*)", "destination": "/" }
+	],
 
 	"headers": [
 		{
