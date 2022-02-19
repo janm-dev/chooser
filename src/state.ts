@@ -12,11 +12,15 @@ const state = reactive({
 		? "dark"
 		: "light") as Theme,
 	resFont: "M Plus Rounded" as ResFont,
+	isSmall: window.matchMedia("(max-width: 1200px)").matches,
 })
 
 window.matchMedia("(prefers-color-scheme: dark)").onchange = (ev) => {
-	console.debug("Theme changed")
 	state.theme = ev.matches ? "dark" : "light"
+}
+
+window.matchMedia("(max-width: 1200px)").onchange = (ev) => {
+	state.isSmall = ev.matches
 }
 
 export default state

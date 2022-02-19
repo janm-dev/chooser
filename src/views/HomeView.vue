@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import { RouterLink } from "vue-router"
 import { version } from "@/main"
+import state from "@/state"
 import cardsIcon from "@/icons/cards.dark.svg?raw"
 import diceIcon from "@/icons/dice.dark.svg?raw"
 import janmIcon from "@/icons/janm.svg?raw"
@@ -16,7 +17,7 @@ const diceSides = ref(6)
 
 <template>
 	<div id="main">
-		<header class="header" aria-hidden="true">
+		<header v-if="!state.isSmall" class="header" aria-hidden="true">
 			<a tabindex="-1" href="https://janm.dev/">
 				<div class="janm-icon" v-html="janmIcon"></div>
 			</a>
@@ -216,18 +217,19 @@ const diceSides = ref(6)
 @media (max-width: 1200px) {
 	#main {
 		grid-template-columns: 100%;
-		grid-template-rows: 0 1fr 1fr;
-		grid-template-areas: "header" "cards" "dice";
-
-		.header,
-		.header * {
-			height: 0;
-			width: 0;
-			display: none;
-		}
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas: "cards" "dice";
 
 		.area {
 			margin: auto;
+		}
+
+		#cards {
+			grid-area: cards;
+		}
+
+		#dice {
+			grid-area: dice;
 		}
 
 		.category-icon {

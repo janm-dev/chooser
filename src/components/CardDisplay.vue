@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { CardValueShort, CardSuitShort } from "@/conversions"
 import { valuesS2L, suitsS2L } from "@/conversions"
+import state from "@/state"
 
 defineProps<{
 	value: CardValueShort
@@ -14,8 +15,8 @@ defineProps<{
 		<div class="card">
 			<span class="suit top">{{ suit }}</span>
 			<span class="value top">{{ value }}</span>
-			<span class="value bottom">{{ value }}</span>
-			<span class="suit bottom">{{ suit }}</span>
+			<span v-if="!state.isSmall" class="value bottom">{{ value }}</span>
+			<span v-if="!state.isSmall" class="suit bottom">{{ suit }}</span>
 		</div>
 		<h2 v-if="fullscreen" class="desc">
 			{{ valuesS2L[value] }} of {{ suitsS2L[suit] }}
