@@ -3,8 +3,10 @@ import { ref } from "vue"
 import { RouterLink } from "vue-router"
 import { version } from "@/main"
 import state from "@/state"
-import cardsIcon from "@/icons/cards.dark.svg?raw"
-import diceIcon from "@/icons/dice.dark.svg?raw"
+import cardsIconDark from "@/icons/cards.dark.svg?raw"
+import diceIconDark from "@/icons/dice.dark.svg?raw"
+import cardsIconLight from "@/icons/cards.light.svg?raw"
+import diceIconLight from "@/icons/dice.light.svg?raw"
 import janmIcon from "@/icons/janm.svg?raw"
 
 const selectInput = (event: FocusEvent) =>
@@ -38,7 +40,10 @@ const diceSides = ref(6)
 		</header>
 
 		<section id="cards" class="area">
-			<div class="category-icon" v-html="cardsIcon"></div>
+			<div
+				class="category-icon"
+				v-html="state.theme === 'dark' ? cardsIconDark : cardsIconLight"
+			></div>
 			<h2>
 				<RouterLink
 					class="action"
@@ -56,7 +61,10 @@ const diceSides = ref(6)
 			</h2>
 		</section>
 		<section id="dice" class="area">
-			<div class="category-icon" v-html="diceIcon"></div>
+			<div
+				class="category-icon"
+				v-html="state.theme === 'dark' ? diceIconDark : diceIconLight"
+			></div>
 			<h2>
 				<RouterLink
 					class="action"
