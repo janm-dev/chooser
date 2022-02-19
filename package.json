@@ -11,7 +11,8 @@
 		"dev": "vite --host",
 		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vue-tsc --noEmit && vite build && vite preview --port 5050 --host",
-		"lighthouse": "concurrently -n server,lh-home,lh-dice-a,lh-dice-b,lh-cards-a,lh-cards-b -c bgGray,bgBlue,bgBlue,bgBlue,bgBlue,bgBlue -k \"yarn preview\" \"lighthouse http://localhost:5050 --chrome-flags='--headless' --view --output-path ./lighthouse.1.html && lighthouse http://localhost:5050/cards/4 --chrome-flags='--headless' --view --output-path ./lighthouse.2.html && lighthouse http://localhost:5050/cards/200 --chrome-flags='--headless' --view --output-path ./lighthouse.3.html && lighthouse http://localhost:5050/dice/6D20 --chrome-flags='--headless' --view --output-path ./lighthouse.4.html && lighthouse http://localhost:5050/dice/100D1000 --chrome-flags='--headless' --view --output-path ./lighthouse.5.html\"",
+		"lighthouse": "concurrently -n server,lh -c bgGray,bgBlue -k \"yarn preview\" \"curl http://localhost:5050/ --connect-timeout 30 --retry 30 --retry-connrefused --retry-delay 1 --retry-max-time 30 && yarn just-lighthouse\"",
+		"just-lighthouse": "concurrently -n home,cards-a,cards-b,dice-a,dice-b -c bgBlue \"lighthouse http://localhost:5050 --chrome-flags='--headless' --view --output-path ./lighthouse.1.html\" \"lighthouse http://localhost:5050/cards/4 --chrome-flags='--headless' --view --output-path ./lighthouse.2.html\" \"lighthouse http://localhost:5050/cards/200 --chrome-flags='--headless' --view --output-path ./lighthouse.3.html\" \"lighthouse http://localhost:5050/dice/6D20 --chrome-flags='--headless' --view --output-path ./lighthouse.4.html\" \"lighthouse http://localhost:5050/dice/100D1000 --chrome-flags='--headless' --view --output-path ./lighthouse.5.html\"",
 		"typecheck": "vue-tsc --noEmit",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
 		"svgo": "svgo -f ./ -r --config ./svgo.config.js"
