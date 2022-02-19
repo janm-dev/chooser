@@ -1,28 +1,56 @@
 <script setup lang="ts">
-import d2 from "@/icons/d2.dark.svg?raw"
-import d4 from "@/icons/d4.dark.svg?raw"
-import d6 from "@/icons/d6.dark.svg?raw"
-import d8 from "@/icons/d8.dark.svg?raw"
-import d10 from "@/icons/d10.dark.svg?raw"
-import d12 from "@/icons/d12.dark.svg?raw"
-import d20 from "@/icons/d20.dark.svg?raw"
+import type { Theme } from "@/state"
+import state from "@/state"
+import d2Dark from "@/icons/d2.dark.svg?raw"
+import d4Dark from "@/icons/d4.dark.svg?raw"
+import d6Dark from "@/icons/d6.dark.svg?raw"
+import d8Dark from "@/icons/d8.dark.svg?raw"
+import d10Dark from "@/icons/d10.dark.svg?raw"
+import d12Dark from "@/icons/d12.dark.svg?raw"
+import d20Dark from "@/icons/d20.dark.svg?raw"
+import d2Light from "@/icons/d2.light.svg?raw"
+import d4Light from "@/icons/d4.light.svg?raw"
+import d6Light from "@/icons/d6.light.svg?raw"
+import d8Light from "@/icons/d8.light.svg?raw"
+import d10Light from "@/icons/d10.light.svg?raw"
+import d12Light from "@/icons/d12.light.svg?raw"
+import d20Light from "@/icons/d20.light.svg?raw"
 
-const dieIcon = (sides: number): string =>
-	sides < 1000
-		? {
-				"2": d2,
-				"3": d6,
-				"4": d4,
-				"5": d10,
-				"6": d6,
-				"8": d8,
-				"10": d10,
-				"12": d12,
-				"20": d20,
-				"100": d10,
-				"1000": d10,
-		  }[sides] || d20
-		: d2
+const dieIcon = (sides: number): string => {
+	if (state.theme === "dark") {
+		return sides < 1000
+			? {
+					"2": d2Dark,
+					"3": d6Dark,
+					"4": d4Dark,
+					"5": d10Dark,
+					"6": d6Dark,
+					"8": d8Dark,
+					"10": d10Dark,
+					"12": d12Dark,
+					"20": d20Dark,
+					"100": d10Dark,
+					"1000": d10Dark,
+			  }[sides] || d20Dark
+			: d2Dark
+	} else {
+		return sides < 1000
+			? {
+					"2": d2Light,
+					"3": d6Light,
+					"4": d4Light,
+					"5": d10Light,
+					"6": d6Light,
+					"8": d8Light,
+					"10": d10Light,
+					"12": d12Light,
+					"20": d20Light,
+					"100": d10Light,
+					"1000": d10Light,
+			  }[sides] || d20Light
+			: d2Light
+	}
+}
 
 defineProps<{
 	value: number
