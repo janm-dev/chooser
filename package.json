@@ -15,6 +15,7 @@
 		"just-lighthouse": "concurrently -n home,cards-a,cards-b,dice-a,dice-b -c bgBlue \"lighthouse http://localhost:5050 --chrome-flags='--headless' --view --output-path ./lighthouse.1.html\" \"lighthouse http://localhost:5050/cards/4 --chrome-flags='--headless' --view --output-path ./lighthouse.2.html\" \"lighthouse http://localhost:5050/cards/200 --chrome-flags='--headless' --view --output-path ./lighthouse.3.html\" \"lighthouse http://localhost:5050/dice/6D20 --chrome-flags='--headless' --view --output-path ./lighthouse.4.html\" \"lighthouse http://localhost:5050/dice/100D1000 --chrome-flags='--headless' --view --output-path ./lighthouse.5.html\"",
 		"typecheck": "vue-tsc --noEmit",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+		"format": "prettier -c -w .",
 		"svgo": "svgo -f ./ -r --config ./svgo.config.js"
 	},
 	"dependencies": {
