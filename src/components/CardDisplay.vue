@@ -15,8 +15,12 @@ defineProps<{
 		<div class="card">
 			<span class="suit top">{{ suit }}</span>
 			<span class="value top">{{ value }}</span>
-			<span v-if="!state.isSmall" class="value bottom">{{ value }}</span>
-			<span v-if="!state.isSmall" class="suit bottom">{{ suit }}</span>
+			<span v-if="fullscreen || !state.isSmall" class="value bottom">{{
+				value
+			}}</span>
+			<span v-if="fullscreen || !state.isSmall" class="suit bottom">{{
+				suit
+			}}</span>
 		</div>
 		<h2 v-if="fullscreen" class="desc">
 			{{ valuesS2L[value] }} of {{ suitsS2L[suit] }}
