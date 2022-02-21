@@ -1,3 +1,4 @@
+import { registerSW } from "virtual:pwa-register"
 import { createApp } from "vue"
 import App from "./App.vue"
 import router from "./router"
@@ -10,6 +11,12 @@ export const version =
 	"other"
 
 console.debug(version)
+
+registerSW({
+	onOfflineReady: () => {
+		console.log("Service worker installed, ready to work offline.")
+	},
+})
 
 const app = createApp(App)
 
