@@ -1,5 +1,4 @@
 {
-	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
 	"short_name": "rand",
 	"name": "Rand - Pick & Roll",
 	"description": "Pick cards, roll dice. With rand, you can quickly and easily pick random cards or roll dice with varying numbers of sides..",
@@ -7,7 +6,6 @@
 	"start_url": "/",
 	"lang": "en",
 	"display": "standalone",
-	"display_override": ["standalone", "fullscreen", "minimal-ui", "browser"],
 	"theme_color": "#0b3fda",
 	"background_color": "#12161a",
 	"icons": [
