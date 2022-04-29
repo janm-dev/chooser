@@ -1,7 +1,7 @@
 {
 	"short_name": "rand",
 	"name": "Rand - Pick & Roll",
-	"description": "Pick cards, roll dice. With rand, you can quickly and easily pick random cards or roll dice with varying numbers of sides..",
+	"description": "Pick cards, roll dice. With rand, you can quickly and easily pick random cards or roll dice with varying numbers of sides.",
 	"scope": "/",
 	"start_url": "/",
 	"lang": "en",
