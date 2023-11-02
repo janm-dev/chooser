@@ -43,7 +43,7 @@ const pick = (cs: CardInfo[]) => {
 
 		<Card
 			v-if="fullscreen"
-			v-bind="(fullscreen as CardInfo)"
+			v-bind="fullscreen as CardInfo"
 			:fullscreen="true"
 			@click="fullscreen = null"
 		/>

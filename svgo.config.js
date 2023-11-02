@@ -13,7 +13,6 @@
 		"mergeStyles",
 		"inlineStyles",
 		"minifyStyles",
-		"cleanupIDs",
 		"removeUselessDefs",
 		"cleanupNumericValues",
 		"convertColors",
